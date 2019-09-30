@@ -37,4 +37,11 @@ window.onload = function() {
     .addEventListener('click', function() {
       store.dispatch({ type: 'LENNY_FACE'});
     });
+  
+  document.querySelector('#random')
+    .addEventListener('click', function() {
+      let facesArr = [ 'LENNY_FACE', 'FLIP_TABLE', 'SHEEP', 'BEAR' ]
+      let face = Math.floor(Math.random() * facesArr.length);
+      store.dispatch({ type: facesArr[face]});
+    });
 }
